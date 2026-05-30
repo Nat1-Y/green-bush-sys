@@ -4,6 +4,12 @@ const repos = require('../repositories');
 const { getPool } = require('../db/pool');
 const { InventoryError, Errors } = require('../errors');
 
+const DEFAULT_USER_ID = (() => {
+  const raw = parseInt(process.env.INVENTORY_DEFAULT_USER_ID || '', 10);
+  return Number.isFinite(raw) ? raw : null;
+})();
+let defaultUserLogged = false;
+
 // Role groups (store_admin is the legacy alias for store_manager).
 const STORE_MANAGER = ['store_manager', 'store_admin'];
 const FNB = ['fnb_manager'];
@@ -38,10 +44,17 @@ const GROUPS = {
 /** Resolve the acting user from user_id (body/query/header) against PG. */
 async function resolveUser(req, res, next) {
   try {
-    const userId =
+    let userId =
       (req.body && req.body.user_id) ||
       (req.query && req.query.user_id) ||
       req.header('x-user-id');
+    if (!userId && DEFAULT_USER_ID != null) {
+      if (!defaultUserLogged) {
+        console.warn(`[inventory] Falling back to INVENTORY_DEFAULT_USER_ID=${DEFAULT_USER_ID} (dev mode).`);
+        defaultUserLogged = true;
+      }
+      userId = DEFAULT_USER_ID;
+    }
     if (!userId) throw Errors.noUser();
     const user = await repos.usersRepo.getById(getPool(), parseInt(userId, 10));
     if (!user) throw Errors.forbidden('User not found');

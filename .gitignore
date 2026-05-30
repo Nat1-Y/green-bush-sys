@@ -1,6 +1,6 @@
 assets.zip
-.env
-.env.*
+#.env
+#.env.*
 # Dependencies
 node_modules/
 npm-debug.log*
