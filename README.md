@@ -20,6 +20,7 @@ order
 - Café order workflow (Waiter → Kitchen → Waiter → Cashier)
 - Real-time status tracking
 - Order history and status logs
+payment
 
 ### **Payment Processing**
 - Multiple payment methods (Cash, Card, QR Code, Mobile Payment)
