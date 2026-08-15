@@ -35,7 +35,7 @@ attendance
 - Hours calculation
 
 ## 🛠️ Technology Stack
-
+techstack
 - **Runtime**: Node.js
 - **Framework**: Express.js
 - **Database**: PostgreSQL
