@@ -3,7 +3,7 @@ comprhensive
 A comprehensive Node.js backend API for managing bakery and café operations with role-based access control, order management, payment processing, and attendance tracking.
 
 ## 🚀 Features
-
+user
 ### **User Management**
 - Role-based authentication (Admin, Bakery Employee, Café Waiter, Cashier, Kitchen Staff)
 - User profile management
