@@ -14,7 +14,7 @@ menu
 - Category-based organization
 - Availability toggle
 - Price management
-
+order
 ### **Order Management**
 - Bakery order workflow (Employee → Cashier → Customer)
 - Café order workflow (Waiter → Kitchen → Waiter → Cashier)
