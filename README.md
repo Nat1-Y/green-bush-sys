@@ -8,7 +8,7 @@ user
 - Role-based authentication (Admin, Bakery Employee, Café Waiter, Cashier, Kitchen Staff)
 - User profile management
 - Employee status management
-
+menu
 ### **Menu Management**
 - Separate bakery and café menus
 - Category-based organization
