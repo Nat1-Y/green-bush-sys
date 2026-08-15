@@ -27,7 +27,7 @@ payment
 - QR code generation for café payments
 - Payment confirmation workflow
 - Payment history tracking
-
+attendance
 ### **Attendance System**
 - Clock in/out functionality
 - Daily attendance tracking
